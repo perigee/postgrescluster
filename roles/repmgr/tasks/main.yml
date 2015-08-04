@@ -3,11 +3,6 @@
 - apt: update_cache=yes
 
 
-- name: install pgbouncer
-  sudo: yes
-  apt: pkg=pgbouncer state=present force=true
-
-
 - name: unarchive repmgr 
   unarchive: >
   src=http://www.repmgr.org/download/repmgr-3.0.1.tar.gz
