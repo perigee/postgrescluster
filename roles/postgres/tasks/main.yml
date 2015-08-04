@@ -1,0 +1,11 @@
+---
+
+- name: config for cluster
+  shell: "{{ item }}"
+  with_items:
+    - sed -i "s/#hot_standby = off/hot_standby = on/g" /etc/postgresql/9.3/main/postgresql.conf
+    - sed -i "s/#wal_level = minimal/wal_level = 'hot_standby'/g" /etc/postgresql/9.3/main/postgresql.conf
+    - sed -i "s/#max_wal_senders = 0/max_wal_senders = 50/g" /etc/postgresql/9.3/main/postgresql.conf
+    - sed -i "s/#wal_keep_segments = 0/wal_keep_segments = 5000/g" /etc/postgresql/9.3/main/postgresql.conf
+    - sed -i "s/#archive_mode = off/archive_mode = on/g" /etc/postgresql/9.3/main/postgresql.conf
+    - sed -i "s/#archive_command = ''/archive_command = 'cd .'/g" /etc/postgresql/9.3/main/postgresql.conf
