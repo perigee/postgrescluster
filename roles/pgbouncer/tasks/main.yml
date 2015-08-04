@@ -1,0 +1,5 @@
+
+- name: install pgbouncer
+  sudo: yes
+  apt: pkg=pgbouncer state=present force=true
+
