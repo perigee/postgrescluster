@@ -1,0 +1,16 @@
+---
+
+- apt: update_cache=yes
+
+
+- name: install pgbouncer
+  sudo: yes
+  apt: pkg=pgbouncer state=present force=true
+
+- name: install repmgr
+  sudo: true
+  apt: pkg="{{item}}" state=present force=true
+  with_items:
+    - repmgr
+    - postgresql-9.3-repmgr
+    - postgresql-contrib-9.3
