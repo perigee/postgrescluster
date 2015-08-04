@@ -1,5 +1,7 @@
 #!/bin/bash
-
+###############################
+# Options: post for postgreSQL
+###############################
 
 case $1 in 
     post* )
